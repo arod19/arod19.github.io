@@ -1,0 +1,31 @@
+body,
+button {
+  font-family: sans-serif;
+  color: black;
+  background-color: #ffffff;
+  text-align: center;
+  padding: 0 5%;
+}
+
+button {
+  display: inline-block;
+  font-size: 2rem;
+  background-color: black;
+  border-radius: 8px;
+  border: none;
+}
+
+tr {
+  outline: 2px solid black;
+}
+
+video {
+  max-width: 50vw;
+}
+
+model-viewer {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 40vh;
+}
