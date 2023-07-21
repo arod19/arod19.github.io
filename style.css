@@ -34,10 +34,10 @@ model-viewer {
   .ipad-portrait { 
     color: red; 
   } 
-  .model-viewer{
+  model-viewer{
     display: block;
     margin: 0 auto;
-    width: 10%;
+    width: 100%;
     height: 40vh;
     }
 }
@@ -45,10 +45,10 @@ model-viewer {
   .ipad-landscape { 
     color: blue; 
   } 
-  .model-viewer{
+  model-viewer{
     display: block;
     margin: 0 auto;
-    width: 10%;
+    width: 100%;
     height: 40vh;
   }
 }
