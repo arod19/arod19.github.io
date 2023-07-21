@@ -37,7 +37,7 @@ model-viewer {
   .model-viewer{
     display: block;
     margin: 0 auto;
-    width: 50%;
+    width: 10%;
     height: 40vh;
     }
 }
@@ -48,7 +48,7 @@ model-viewer {
   .model-viewer{
     display: block;
     margin: 0 auto;
-    width: 50%;
+    width: 10%;
     height: 40vh;
   }
 }
