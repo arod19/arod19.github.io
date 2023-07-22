@@ -45,6 +45,8 @@ See TUMS in Augmented Reality.
     AR is not tracking!
   </button>
 
+</model-viewer>
+
   <div class="slider">
     <div class="slides">
       <button class="slide selected" onclick="switchSrc(this, 'tums3')" style="background-image: url('tums3.webp');">
@@ -54,7 +56,7 @@ See TUMS in Augmented Reality.
         
     </button></div>
   </div>
-</model-viewer>
+
 
 <script type="module">
   const modelViewer = document.querySelector("model-viewer");
@@ -83,6 +85,8 @@ See TUMS in Augmented Reality.
   model-viewer {
     background-color: #eee;
     overflow-x: hidden;
+    width: 50%;
+  height: 40vh;
   }
 
   #ar-button {
@@ -159,7 +163,7 @@ See TUMS in Augmented Reality.
     width: 100%;
     text-align: center;
     overflow: hidden;
-    position: absolute;
+    /*position: absolute;*/
     bottom: 16px;
   }
 
