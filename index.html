@@ -29,7 +29,15 @@ See TUMS in Augmented Reality.
 </a>
 
 <br><br>
-<model-viewer src="tums3.glb" poster="tums3.webp" shadow-intensity="1" ar camera-controls touch-action="pan-y" alt="A 3D model carousel">
+<model-viewer 
+src="tums3.glb" 
+poster="tums3.webp" 
+shadow-intensity="1" 
+ar 
+auto-rotate
+camera-controls 
+touch-action="pan-y" 
+alt="A 3D model carousel">
   
   <button slot="ar-button" id="ar-button">
     View in your space
@@ -162,11 +170,12 @@ See TUMS in Augmented Reality.
   }
 
   .slider {
-    width: 100%;
+    width: 50%;
     text-align: center;
     overflow: hidden;
     /*position: absolute;*/
     bottom: 16px;
+  
   }
 
   .slides {
@@ -175,6 +184,7 @@ See TUMS in Augmented Reality.
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+    
   }
 
   .slide {
