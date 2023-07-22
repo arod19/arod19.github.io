@@ -28,5 +28,6 @@ model-viewer {
   margin: 0 auto;
   width: 50%;
   height: 40vh;
+  overflow-x: hidden;
 }
 
