@@ -1,16 +1,3 @@
-function launchIOSQuickLookAR(usdzSrc) {
-  const anchor = document.createElement("a");
-  anchor.setAttribute("rel", "ar");
-  anchor.appendChild(document.createElement("img"));
-  anchor.setAttribute("href", usdzSrc);
-  anchor.click();
-}
-
-function detectiOSARQuickLook() {
-  const testAnchor = document.createElement("a");
-  return testAnchor.relList.supports("ar");
-}
-
 const modelViewer = document.querySelector("model-viewer");
      
 window.switchSrc = (element, name) => {
@@ -27,3 +14,18 @@ window.switchSrc = (element, name) => {
 document.querySelector(".slider").addEventListener('beforexrselect', (ev) => {
     ev.preventDefault();
 });
+
+
+function launchIOSQuickLookAR(usdzSrc) {
+  const anchor = document.createElement("a");
+  anchor.setAttribute("rel", "ar");
+  anchor.appendChild(document.createElement("img"));
+  anchor.setAttribute("href", usdzSrc);
+  anchor.click();
+}
+
+function detectiOSARQuickLook() {
+  const testAnchor = document.createElement("a");
+  return testAnchor.relList.supports("ar");
+}
+
