@@ -26,7 +26,7 @@
   <model-viewer
   ar
   src="https://cdn.glitch.me/2d3195c6-7364-49ce-baf3-cb1514312387/box.glb?v=1689964442677"
-  ios-src="box.usdz#allowsContentScaling=0&canonicalWebPageURL=https://arplate.com"
+  ios-src="box.usdz#allowsContentScaling=0&canonicalWebPageURL=https://arod19.github.io"
   loading="eager"
   poster="loading.gif" 
   disable-pan
@@ -78,21 +78,23 @@
 <div style="border: 5px outset blue; padding:20px; margin:5px">
 
 <!--
-ios-src="box.usdz#allowsContentScaling=0&canonicalWebPageURL=https://arplate.com"
-loading="eager"
+
+
 ar-modes="webxr"
 
-src="https://cdn.glitch.me/2d3195c6-7364-49ce-baf3-cb1514312387/box.glb?v=1689964442677"
+
 
 -->
 
-  <center> <u> Option #2: </u></center><br><br>
+  <center> <u> Option #2: </u></center><br>
 
   <model-viewer
   id="selector-demo"
   src="https://cdn.glitch.me/2d3195c6-7364-49ce-baf3-cb1514312387/box.glb?v=1689964442677"
+  ios-src="box.usdz#allowsContentScaling=0&canonicalWebPageURL=https://arod19.github.io"
   ar
   poster="loading.gif" 
+  loading="eager"
   disable-pan
   auto-rotate
   camera-controls 
@@ -109,76 +111,60 @@ src="https://cdn.glitch.me/2d3195c6-7364-49ce-baf3-cb1514312387/box.glb?v=168996
 
   </model-viewer>
 
+  <br>
+
   <div id="controls" class="dim">
     <label for="dishes">Main Dishes:</label>
     <select id="dishes" onchange="switchSrc(value);">
 
-      <option value="box">Box</option>
-      <option value="tums3">Tums</option>
+      <option value="box">Stelvia Box - $6.99</option>
+      <option value="tums3">Tums - $2.99</option>
 
     </select><br>
 
   </div>
 
+  <br>
+
+  <div id="controls" class="dim">
+    <label for="dishes">Beverages:</label>
+    <select id="dishes" onchange="switchSrc(value);">
+
+      <option value="monster">Monster Energy - $2.99</option>
+      <option value="coconut">Coconut - $5.99</option>
+
+    </select><br>
+
+  </div>
+
+  <br>
+
+  <div id="controls" class="dim">
+    <label for="dishes">Desserts:</label>
+    <select id="dishes" onchange="switchSrc(value);">
+
+      <option value="cake">Chocolate Cake - $9.99</option>
+      <option value="sundae">Sundae - $5.99</option>
+
+    </select><br>
+
+  </div>
   
 
-    <!--<script type="text/javascript">-->
+   
   <script type=module>
 
   const modelViewer = document.querySelector('#selector-demo');
 
-
-
   window.switchSrc = (i) => {
-    
-    //modelViewer.src = 'https://cdn.glitch.me/2d3195c6-7364-49ce-baf3-cb1514312387/tums3.glb?v=1666335729454';
-  
-    modelViewer.src = i + ".glb";  
+    modelViewer.src = i + ".glb"; 
+    modelViewer.poster = "loading.gif" 
     //alert(i)
-
   }
-    
-  /*
-  modelViewer.querySelector('#src').addEventListener('input', (event) => {
-    modelViewer.src = base + '.glb';
-  });
-  */
 
   </script>
 
-  <style>
-  #controls {
-    bottom: 16px;
-    left: 16px;
-    max-width: unset;
-    transform: unset;
-    pointer-events: auto;
-    z-index: 100;
-  }    
-
-  .dim{
-    background: #fff;
-    border-radius: 4px;
-    border: none;
-    box-sizing: border-box;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-    color: rgba(0, 0, 0, 0.8);
-    display: block;
-    font-family: Futura, Helvetica Neue, sans-serif;
-    font-size: 1em;
-    font-weight: 700;
-    max-width: 128px;
-    overflow-wrap: break-word;
-    padding: 0.5em 1em;
-    width: max-content;
-    height: max-content;
-    transform: translate3d(-50%, -50%, 0);
-    pointer-events: none;
-    --min-hotspot-opacity: 0;
-  }
-
-
-</style>
+ 
 
 
 
