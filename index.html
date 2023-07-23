@@ -13,6 +13,27 @@
 
 <body>
 
+  <select id="1" onchange="clearOthers(this.id);">
+    <option disabled selected value value="clear">-- select an option --</option>
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </select>
+
+  <select id="2" onchange="clearOthers(this.id);">
+    <option disabled selected value value="clear">-- select an option --</option>
+    <option>Option 4</option>
+    <option>Option 5</option>
+    <option>Option 6</option>
+  </select>
+
+  <select id="3" onchange="clearOthers(this.id);">
+    <option disabled selected value value="clear">-- select an option --</option>
+    <option>Option 7</option>
+    <option>Option 8</option>
+    <option>Option 9</option>
+  </select>
+
 <div style="border: 5px outset red; padding:20px; margin:5px">
 
   <center> <u> Option #1: </u></center>
@@ -108,11 +129,12 @@ ios-src="box.usdz#allowsContentScaling=0&canonicalWebPageURL=https://arod19.gith
 
   <br>
 
-  <div id="controls" class="dim">
-    <label for="dishes">Main Dishes:</label>
-    <select id="dishes" onchange="switchSrc(value);">
+  <div id="control1" class="dim">
+    <label for="selector1">Main Dishes:</label>
+    <select id="selector1" onchange="switchSrc(value); clearOthers(this.id);">
 
-      <option value="box">Stelvia Box - $6.99</option>
+      <option disabled selected value value="clear">-- select an option --</option>
+      <option selected value="box">Stelvia Box - $6.99</option>
       <option value="tums3">Tums - $2.99</option>
 
     </select><br>
@@ -121,11 +143,12 @@ ios-src="box.usdz#allowsContentScaling=0&canonicalWebPageURL=https://arod19.gith
 
   <br>
 
-  <div id="controls2" class="dim2">
-    <label for="dishes2">Beverages:</label>
-    <select id="dishes2" onchange="switchSrc(value);">
+  <div id="control2" class="dim2">
+    <label for="selector2">Beverages:</label>
+    <select id="selector2" onchange="switchSrc(value); clearOthers(this.id);">
 
-      <option disabled selected value value="monster">Monster Energy - $2.99</option>
+      <option disabled selected value value="clear">-- select an option --</option>
+      <option value="monster">Monster Energy - $2.99</option>
       <option value="coconut">Coconut - $5.99</option>
 
     </select><br>
@@ -134,17 +157,19 @@ ios-src="box.usdz#allowsContentScaling=0&canonicalWebPageURL=https://arod19.gith
 
   <br>
 
-  <div id="controls3" class="dim3">
-    <label for="dishes3">Desserts:</label>
-    <select id="dishes3" onchange="switchSrc(value);">
+  <div id="control3" class="dim3">
+    <label for="selector3">Desserts:</label>
+    <select id="selector3" onchange="switchSrc(value); clearOthers(this.id);">
 
-      <option disabled selected value value="cake">Chocolate Cake - $9.99</option>
+      <option disabled selected value value="clear">-- select an option --</option>
+      <option value="cake">Chocolate Cake - $9.99</option>
       <option value="sundae">Sundae - $5.99</option>
 
     </select><br>
 
   </div>
   
+ 
 
    
   <script type=module>
@@ -160,6 +185,32 @@ ios-src="box.usdz#allowsContentScaling=0&canonicalWebPageURL=https://arod19.gith
 
   //ios-src="box.usdz#allowsContentScaling=0&canonicalWebPageURL=https://arod19.github.io"
 
+
+
+  </script>
+
+   <script type="text/javascript">
+
+    function clearOthers(id){
+      if (id == "selector1") {
+        document.getElementById("selector2").selectedIndex = 0;
+        document.getElementById("selector3").selectedIndex = 0;        
+      }
+
+      if (id == "selector2") {
+        document.getElementById("selector1").selectedIndex = 0;
+        document.getElementById("selector3").selectedIndex = 0;        
+      }
+
+      if (id == "selector3") {
+        document.getElementById("selector1").selectedIndex = 0;
+        document.getElementById("selector2").selectedIndex = 0;        
+      }
+
+    }
+   
+
+
   </script>
 
 
@@ -171,7 +222,7 @@ ios-src="box.usdz#allowsContentScaling=0&canonicalWebPageURL=https://arod19.gith
 
 <footer>
   <center>
-  <p>&copy; ARL 2023 <br>
+  <p>&copy; ARL 2023. <br>
   <a href="mailto:angelrod1919@gmail.com">angelrod1919@gmail.com
   </a>
   </p>

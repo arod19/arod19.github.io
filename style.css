@@ -82,7 +82,7 @@ model-viewer {
     display: block;
   }
 
-  #controls {
+  #control1 {
     bottom: 16px;
     left: 16px;
     max-width: unset;
