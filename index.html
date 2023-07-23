@@ -100,7 +100,7 @@
 
 <!--
 ios-src="box.usdz#allowsContentScaling=0&canonicalWebPageURL=https://arod19.github.io"
-loading="eager"
+
 -->
 
   <center> <u> Option #2: </u></center><br>
@@ -111,7 +111,7 @@ loading="eager"
   
   ar
   poster="loading.gif" 
-  
+  loading="eager"
   disable-pan
   auto-rotate
   camera-controls 
@@ -178,9 +178,10 @@ loading="eager"
   const modelViewer = document.querySelector('#selector-demo');
 
   window.switchSrc = (i) => {
+    modelViewer.poster = "loading.gif"
     modelViewer.src = i + ".glb"; 
     //modelViewer.ios-src= i + ""
-    modelViewer.poster = "loading.gif" 
+     
     //alert(i)
   }
 
@@ -223,7 +224,7 @@ loading="eager"
 
 <footer>
   <center>
-  <p>&copy; ARL 2023 <br>
+  <p>&copy; ARL 2023.. <br>
   <a href="mailto:angelrod1919@gmail.com">angelrod1919@gmail.com
   </a>
   </p>
