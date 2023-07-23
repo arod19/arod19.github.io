@@ -82,13 +82,12 @@ model-viewer {
     display: block;
   }
 
-  #control1 {
+  #control {
     bottom: 16px;
     left: 16px;
     max-width: unset;
     transform: unset;
     pointer-events: auto;
-    z-index: 100;
   }    
 
   /*
