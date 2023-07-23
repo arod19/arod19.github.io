@@ -126,7 +126,6 @@ model-viewer {
     padding: 0.5em 1em;
     width: max-content;
     height: max-content;
-    transform: translate3d(-50%, -50%, 0);
     pointer-events: none;
     --min-hotspot-opacity: 0;
   }
