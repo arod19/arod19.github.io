@@ -135,7 +135,7 @@ ios-src="box.usdz#allowsContentScaling=0&canonicalWebPageURL=https://arod19.gith
     <select id="selector1" onchange="switchSrc(value); clearOthers(this.id);">
 
       <option disabled selected value value="clear">-- select an option --</option>
-      <option selected value="box">Stelvia Box - $6.99</option>
+      <option selected value="box">Stevia Box - $6.99</option>
       <option value="tums3">Tums - $2.99</option>
 
     </select><br>
@@ -188,6 +188,22 @@ ios-src="box.usdz#allowsContentScaling=0&canonicalWebPageURL=https://arod19.gith
   //ios-src="box.usdz#allowsContentScaling=0&canonicalWebPageURL=https://arod19.github.io"
 
 
+  
+  // Handles loading the events for <model-viewer>'s slotted progress bar
+  const onProgress = (event) => {
+    const progressBar = event.target.querySelector('.progress-bar');
+    const updatingBar = event.target.querySelector('.update-bar');
+    updatingBar.style.width = `${event.detail.totalProgress * 100}%`;
+    if (event.detail.totalProgress === 1) {
+      progressBar.classList.add('hide');
+      event.target.removeEventListener('progress', onProgress);
+    } else {
+      progressBar.classList.remove('hide');
+    } 
+  };
+  document.querySelector('model-viewer').addEventListener('progress', onProgress);
+
+
 
   </script>
 
@@ -224,7 +240,7 @@ ios-src="box.usdz#allowsContentScaling=0&canonicalWebPageURL=https://arod19.gith
 
 <footer>
   <center>
-  <p>&copy; ARL 2023.. <br>
+  <p>&copy; ARL 2023 <br>
   <a href="mailto:angelrod1919@gmail.com">angelrod1919@gmail.com
   </a>
   </p>
