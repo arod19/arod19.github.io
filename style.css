@@ -119,7 +119,25 @@ model-viewer {
     transform: unset;
     pointer-events: auto;
     z-index: 100;
-  }    
+  }
+
+  #controls2 {
+    bottom: 16px;
+    left: 16px;
+    max-width: unset;
+    transform: unset;
+    pointer-events: auto;
+    z-index: 100;
+  }   
+
+  #controls3 {
+    bottom: 16px;
+    left: 16px;
+    max-width: unset;
+    transform: unset;
+    pointer-events: auto;
+    z-index: 100;
+  }       
 
   .dim{
     background: #fff;
