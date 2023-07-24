@@ -25,6 +25,7 @@ model-viewer {
   margin: auto;
   width: 60%;
   height: 40vh;
+  --progress-bar-color: black;
 }
 
 model-viewer::part(default-progress-bar){
