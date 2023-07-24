@@ -25,12 +25,10 @@ model-viewer {
   margin: auto;
   width: 60%;
   height: 40vh;
+  --progress-bar-color: red;
 }
 
-.progress-bar::before {
-  content: url(loading.gif);
-  
-}
+
 
   #ar-button {
     background-image: url(arlogo.png);
