@@ -27,6 +27,11 @@ model-viewer {
   height: 40vh;
 }
 
+.progress-bar {
+  background-image: url(loading.gif);
+  background-repeat: no-repeat;
+}
+
   #ar-button {
     background-image: url(arlogo.png);
     background-repeat: no-repeat;

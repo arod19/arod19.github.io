@@ -102,7 +102,7 @@
 ios-src="box.usdz#allowsContentScaling=0&canonicalWebPageURL=https://arod19.github.io"
 interaction-prompt-threshold="1500"
 -->
-
+<br>
   <center> <u> Option #2: </u></center><br>
 
   <model-viewer
@@ -125,6 +125,7 @@ interaction-prompt-threshold="1500"
       View in your space
     </button>
 
+    <div id="mv" slot="progress-bar"></div>
 
   </model-viewer>
 
@@ -187,26 +188,7 @@ interaction-prompt-threshold="1500"
 
   //ios-src="box.usdz#allowsContentScaling=0&canonicalWebPageURL=https://arod19.github.io"
 
-  // Handles loading the events for <model-viewer>'s slotted progress bar
-const onProgress = (event) => {
-  const progressBar = event.target.querySelector('.progress-bar');
-  const updatingBar = event.target.querySelector('.update-bar');
-
-  if (event.detail.totalProgress === 0) {
-    progressBar.style.display = 'block';
-    updatingBar.style.width = '0%';
-  } else {
-    updatingBar.style.width = `${event.detail.totalProgress * 100}%`;
-
-    if (event.detail.totalProgress === 1) {
-      setTimeout(() => {
-        progressBar.style.display = 'none';
-      }, 500);
-    }
-  }
-};
-document.querySelector('#selector-demo').addEventListener('progress', onProgress);
-
+ 
 
 
   </script>
@@ -244,7 +226,7 @@ document.querySelector('#selector-demo').addEventListener('progress', onProgress
 
 <footer>
   <center>
-  <p>&copy; ARL 2023.. <br>
+  <p>&copy; ARL 2023 <br>
   <a href="mailto:angelrod1919@gmail.com">angelrod1919@gmail.com
   </a>
   </p>
