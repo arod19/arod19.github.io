@@ -27,7 +27,7 @@ model-viewer {
   height: 40vh;
 }
 
-.progress-bar {
+.progress-bar::before {
   content: url(loading.gif);
   
 }
