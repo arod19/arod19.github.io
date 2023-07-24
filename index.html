@@ -110,11 +110,13 @@ interaction-prompt-threshold="1500"
 
   </model-viewer>
 
+  
+    <center><p id="p1">Organic sweetener with 0 calories.</p></center>
   <br>
 
   <div id="control" class="dim">
     <label for="selector1">Main Dishes:</label>
-    <select id="selector1" onchange="switchSrc(value); clearOthers(this.id);">
+    <select id="selector1" onchange="switchSrc(value); clearOthers(this.id); setDesc(value);">
 
       <option disabled selected value value="clear">-- select an option --</option>
       <option selected value="box">Stevia Box - $6.99</option>
@@ -128,7 +130,7 @@ interaction-prompt-threshold="1500"
 
   <div id="control" class="dim">
     <label for="selector2">Beverages:</label>
-    <select id="selector2" onchange="switchSrc(value); clearOthers(this.id);">
+    <select id="selector2" onchange="switchSrc(value); clearOthers(this.id); setDesc(value);">
 
       <option disabled selected value value="clear">-- select an option --</option>
       <option value="monster">Monster Energy - $2.99</option>
@@ -142,7 +144,7 @@ interaction-prompt-threshold="1500"
 
   <div id="control" class="dim">
     <label for="selector3">Desserts:</label>
-    <select id="selector3" onchange="switchSrc(value); clearOthers(this.id);">
+    <select id="selector3" onchange="switchSrc(value); clearOthers(this.id); setDesc(value);">
 
       <option disabled selected value value="clear">-- select an option --</option>
       <option value="cake">Chocolate Cake - $9.99</option>
@@ -169,10 +171,41 @@ interaction-prompt-threshold="1500"
 
   //ios-src="box.usdz#allowsContentScaling=0&canonicalWebPageURL=https://arod19.github.io"
 
-
   </script>
 
+
+
    <script type="text/javascript">
+
+    function setDesc(value){
+
+      if (value == "box") {
+        document.getElementById("p1").innerHTML = "Organic sweetener with 0 calories."
+      }
+
+      if (value == "tums3") {
+        document.getElementById("p1").innerHTML = "Best remedy for stomachaches."
+      }
+
+      if (value == "monster") {
+        document.getElementById("p1").innerHTML = "Caffeinated energy drink."
+      }
+
+      if (value == "coconut") {
+        document.getElementById("p1").innerHTML = "Refreshing and natural."
+      }
+
+      if (value == "cake") {
+        document.getElementById("p1").innerHTML = "Delicious chocolate cake, topped with cherries."
+      }
+
+      if (value == "sundae") {
+        document.getElementById("p1").innerHTML = "Cup of ice cream with a touch of chocolate."
+      }
+
+
+    }
+
 
     function clearOthers(id){
       if (id == "selector1") {
