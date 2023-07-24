@@ -28,8 +28,8 @@ model-viewer {
 }
 
 .progress-bar {
-  background-image: url(loading.gif);
-  background-repeat: no-repeat;
+  content: url(loading.gif);
+  
 }
 
   #ar-button {
