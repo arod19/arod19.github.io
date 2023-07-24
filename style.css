@@ -25,13 +25,20 @@ model-viewer {
   margin: auto;
   width: 60%;
   height: 40vh;
-  --progress-bar-color: blue;
+  --progress-bar-color: transparent;
 }
 
 model-viewer::part(default-progress-bar){
   margin: auto;
-  height: 50%;
+  height: 100%;
   background-image: url(loading.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: none;
+   left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 
 }
 
