@@ -50,10 +50,11 @@
   <model-viewer  camera-orbit="-30deg auto auto" max-camera-orbit="auto 100deg auto" shadow-intensity="1" camera-controls touch-action="pan-y" src="../../assets/ShopifyModels/Chair.glb" alt="A 3D model of an armchair.">
 -->
 
-    
+    <!--
     <button slot="ar-button" id="ar-button">
       View in your space
     </button>
+    -->
 
   <button slot="hotspot-dot+X-Y+Z" class="dot" data-position="1 -1 1" data-normal="1 0 0"></button>
   <button slot="hotspot-dim+X-Y" class="dim" data-position="1 -1 0" data-normal="1 0 0"></button>
@@ -77,9 +78,9 @@
   <div id="controls" class="dim">
     <label for="src">Product:</label>
     <select id="src">
-      <option value="../../assets/ShopifyModels/Chair.glb">Chair</option>
-      <option value="../../assets/ShopifyModels/Mixer.glb">Mixer</option>
-      <option value="../../assets/ShopifyModels/GeoPlanter.glb">Cactus</option>
+      <option value="tums3.glb">Tums</option>
+      <option value="cream.glb">Cream</option>
+      <option value="cake.glb">Cake</option>
     </select><br>
 
     <label for="show-dimensions">Show Dimensions:</label>
@@ -88,7 +89,7 @@
 </model-viewer> <!-- end of model viewer -->
 
 <script type="module">
-  const modelViewer = document.querySelector('#dimension-demo');
+  const modelViewer = document.querySelector('#shirt-viewer');
 
   modelViewer.querySelector('#src').addEventListener('input', (event) => {
     modelViewer.src = event.target.value;
