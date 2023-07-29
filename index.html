@@ -7,9 +7,7 @@
 <meta name="description" content="AR Menu">
 <meta name="keywords" content="ar restaurant menu">
 
-<!--
 <link rel="stylesheet" href="style.css">
--->
 
 </head>
 
@@ -17,326 +15,252 @@
 
 <div style="border: 5px outset red; padding:20px; margin:5px">
 
+  <center> <u> Option #1: </u></center>
 
-  <h1><center><u>Dimensions for the shirt</u></center></h1>
+  <h1><center>Menu for this Restaurant</center></h1>
 
   <h3>
-    * ALA Shirt:<br>
+    * Stevia Box - $7.99:<br>
   </h3>
 
-  <!--
-
- camera-orbit="90deg 60deg 4m"
- ios-src="box.usdz#allowsContentScaling=0&canonicalWebPageURL=https://arod19.github.io"
-  -->
-
   <model-viewer
-  id="shirt-viewer"
   ar
-  ar-modes="webxr"
-  ar-scale="fixed" 
   src="https://cdn.glitch.me/2d3195c6-7364-49ce-baf3-cb1514312387/box.glb?v=1689964442677"
+  ios-src="box.usdz#allowsContentScaling=0&canonicalWebPageURL=https://arod19.github.io"
   loading="eager"
   poster="loading.gif" 
   disable-pan
   auto-rotate
   camera-controls 
+  camera-orbit="90deg 60deg 4m"
   touch-action="none" 
   auto-rotate-delay="1"
   interaction-prompt-threshold="1500"
-  alt="a 3d model of a shirt with its dimensions">
-
-<!--
-  <model-viewer  camera-orbit="-30deg auto auto" max-camera-orbit="auto 100deg auto" shadow-intensity="1" camera-controls touch-action="pan-y" src="../../assets/ShopifyModels/Chair.glb" alt="A 3D model of an armchair.">
--->
-
+  alt="box">
     
     <button slot="ar-button" id="ar-button">
       View in your space
     </button>
+  </model-viewer>
+
+
+  <h3><br>
+  	* TUMS - $3.99:<br>
+  </h3>
+
+  <model-viewer
+  ar
+  poster="loading.gif" 
+  src="https://cdn.glitch.me/2d3195c6-7364-49ce-baf3-cb1514312387/tums3.glb?v=1666335729454"
+  ios-src="tums3.usdz#allowsContentScaling=0&canonicalWebPageURL=https://arod19.github.io"
+  loading="eager"
+  disable-pan
+  auto-rotate
+  camera-controls 
+  camera-orbit="260deg 60deg 4m"
+  touch-action="none" 
+  auto-rotate-delay="1"
+  interaction-prompt-threshold="1500"
+  alt="tums">
     
+    <button slot="ar-button" id="ar-button">
+      View in your space
+    </button>
+  </model-viewer>
 
-  <button slot="hotspot-dot+X-Y+Z" class="dot" data-position="1 -1 1" data-normal="1 0 0"></button>
-  <button slot="hotspot-dim+X-Y" class="dim" data-position="1 -1 0" data-normal="1 0 0"></button>
-  <button slot="hotspot-dot+X-Y-Z" class="dot" data-position="1 -1 -1" data-normal="1 0 0"></button>
-  <button slot="hotspot-dim+X-Z" class="dim" data-position="1 0 -1" data-normal="1 0 0"></button>
-  <button slot="hotspot-dot+X+Y-Z" class="dot" data-position="1 1 -1" data-normal="0 1 0"></button>
-  <button slot="hotspot-dim+Y-Z" class="dim" data-position="0 -1 -1" data-normal="0 1 0"></button>
-  <button slot="hotspot-dot-X+Y-Z" class="dot" data-position="-1 1 -1" data-normal="0 1 0"></button>
-  <button slot="hotspot-dim-X-Z" class="dim" data-position="-1 0 -1" data-normal="-1 0 0"></button>
-  <button slot="hotspot-dot-X-Y-Z" class="dot" data-position="-1 -1 -1" data-normal="-1 0 0"></button>
-  <button slot="hotspot-dim-X-Y" class="dim" data-position="-1 -1 0" data-normal="-1 0 0"></button>
-  <button slot="hotspot-dot-X-Y+Z" class="dot" data-position="-1 -1 1" data-normal="-1 0 0"></button>
-  <svg id="dimLines" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" class="dimensionLineContainer">
-    <line class="dimensionLine"></line>
-    <line class="dimensionLine"></line>
-    <line class="dimensionLine"></line>
-    <line class="dimensionLine"></line>
-    <line class="dimensionLine"></line>
-  </svg>
+  <h3><br>
+    * Cream - $5.99<br>
+  </h3>
 
-  <div id="controls" class="dim">
-    <label for="src">Product:</label>
-    <select id="src">
-      <option value="tums3.glb">Tums</option>
-      <option value="cream.glb">Cream</option>
-      <option value="cake.glb">Cake</option>
-    </select><br>
+  <model-viewer
+  ar
+  poster="loading.gif" 
+  src="https://cdn.glitch.global/2d3195c6-7364-49ce-baf3-cb1514312387/cream.glb?v=1690223384978"
+  ios-src="cream.usdz#allowsContentScaling=0&canonicalWebPageURL=https://arod19.github.io"
+  loading="eager"
+  disable-pan
+  auto-rotate
+  camera-controls 
+  camera-orbit="290deg 80deg 4m"
+  touch-action="none" 
+  auto-rotate-delay="1"
+  interaction-prompt-threshold="1500"
+  alt="tums">
+    
+    <button slot="ar-button" id="ar-button">
+      View in your space
+    </button>
+  </model-viewer>
 
-    <label for="show-dimensions">Show Dimensions:</label>
-    <input id="show-dimensions" type="checkbox" checked="true">
-  </div>
-</model-viewer> <!-- end of model viewer -->
-
-<script type="module">
-  const modelViewer = document.querySelector('#shirt-viewer');
-
-  modelViewer.querySelector('#src').addEventListener('input', (event) => {
-    modelViewer.src = event.target.value;
-  });
-
-  const checkbox = modelViewer.querySelector('#show-dimensions');
-
-  function setVisibility(element) {
-    if (checkbox.checked) {
-      element.classList.remove('hide');
-    } else {
-      element.classList.add('hide');
-    }
-  }
-
-  checkbox.addEventListener('change', () => {
-    setVisibility(modelViewer.querySelector('#dimLines'));
-    modelViewer.querySelectorAll('button').forEach((hotspot) => {
-      setVisibility(hotspot);
-    });
-  });
-
-  // update svg
-  function drawLine(svgLine, dotHotspot1, dotHotspot2, dimensionHotspot) {
-    if (dotHotspot1 && dotHotspot2) {
-      svgLine.setAttribute('x1', dotHotspot1.canvasPosition.x);
-      svgLine.setAttribute('y1', dotHotspot1.canvasPosition.y);
-      svgLine.setAttribute('x2', dotHotspot2.canvasPosition.x);
-      svgLine.setAttribute('y2', dotHotspot2.canvasPosition.y);
-
-      // use provided optional hotspot to tie visibility of this svg line to
-      if (dimensionHotspot && !dimensionHotspot.facingCamera) {
-        svgLine.classList.add('hide');
-      }
-      else {
-        svgLine.classList.remove('hide');
-      }
-    }
-  }
-
-  const dimLines = modelViewer.querySelectorAll('line');
-
-  const renderSVG = () => {
-    drawLine(dimLines[0], modelViewer.queryHotspot('hotspot-dot+X-Y+Z'), modelViewer.queryHotspot('hotspot-dot+X-Y-Z'), modelViewer.queryHotspot('hotspot-dim+X-Y'));
-    drawLine(dimLines[1], modelViewer.queryHotspot('hotspot-dot+X-Y-Z'), modelViewer.queryHotspot('hotspot-dot+X+Y-Z'), modelViewer.queryHotspot('hotspot-dim+X-Z'));
-    drawLine(dimLines[2], modelViewer.queryHotspot('hotspot-dot+X+Y-Z'), modelViewer.queryHotspot('hotspot-dot-X+Y-Z')); // always visible
-    drawLine(dimLines[3], modelViewer.queryHotspot('hotspot-dot-X+Y-Z'), modelViewer.queryHotspot('hotspot-dot-X-Y-Z'), modelViewer.queryHotspot('hotspot-dim-X-Z'));
-    drawLine(dimLines[4], modelViewer.queryHotspot('hotspot-dot-X-Y-Z'), modelViewer.queryHotspot('hotspot-dot-X-Y+Z'), modelViewer.queryHotspot('hotspot-dim-X-Y'));
-  };
-
-  modelViewer.addEventListener('camera-change', renderSVG);
-
-  modelViewer.addEventListener('load', () => {
-    const center = modelViewer.getBoundingBoxCenter();
-    const size = modelViewer.getDimensions();
-    const x2 = size.x / 2;
-    const y2 = size.y / 2;
-    const z2 = size.z / 2;
-
-    modelViewer.updateHotspot({
-      name: 'hotspot-dot+X-Y+Z',
-      position: `${center.x + x2} ${center.y - y2} ${center.z + z2}`
-    });
-
-    modelViewer.updateHotspot({
-      name: 'hotspot-dim+X-Y',
-      position: `${center.x + x2 * 1.2} ${center.y - y2 * 1.1} ${center.z}`
-    });
-    modelViewer.querySelector('button[slot="hotspot-dim+X-Y"]').textContent =
-        `${(size.z * 100).toFixed(0)} cm`;
-
-    modelViewer.updateHotspot({
-      name: 'hotspot-dot+X-Y-Z',
-      position: `${center.x + x2} ${center.y - y2} ${center.z - z2}`
-    });
-
-    modelViewer.updateHotspot({
-      name: 'hotspot-dim+X-Z',
-      position: `${center.x + x2 * 1.2} ${center.y} ${center.z - z2 * 1.2}`
-    });
-    modelViewer.querySelector('button[slot="hotspot-dim+X-Z"]').textContent =
-        `${(size.y * 100).toFixed(0)} cm`;
-
-    modelViewer.updateHotspot({
-      name: 'hotspot-dot+X+Y-Z',
-      position: `${center.x + x2} ${center.y + y2} ${center.z - z2}`
-    });
-
-    modelViewer.updateHotspot({
-      name: 'hotspot-dim+Y-Z',
-      position: `${center.x} ${center.y + y2 * 1.1} ${center.z - z2 * 1.1}`
-    });
-    modelViewer.querySelector('button[slot="hotspot-dim+Y-Z"]').textContent =
-        `${(size.x * 100).toFixed(0)} cm`;
-
-    modelViewer.updateHotspot({
-      name: 'hotspot-dot-X+Y-Z',
-      position: `${center.x - x2} ${center.y + y2} ${center.z - z2}`
-    });
-
-    modelViewer.updateHotspot({
-      name: 'hotspot-dim-X-Z',
-      position: `${center.x - x2 * 1.2} ${center.y} ${center.z - z2 * 1.2}`
-    });
-    modelViewer.querySelector('button[slot="hotspot-dim-X-Z"]').textContent =
-        `${(size.y * 100).toFixed(0)} cm`;
-
-    modelViewer.updateHotspot({
-      name: 'hotspot-dot-X-Y-Z',
-      position: `${center.x - x2} ${center.y - y2} ${center.z - z2}`
-    });
-
-    modelViewer.updateHotspot({
-      name: 'hotspot-dim-X-Y',
-      position: `${center.x - x2 * 1.2} ${center.y - y2 * 1.1} ${center.z}`
-    });
-    modelViewer.querySelector('button[slot="hotspot-dim-X-Y"]').textContent =
-        `${(size.z * 100).toFixed(0)} cm`;
-
-    modelViewer.updateHotspot({
-      name: 'hotspot-dot-X-Y+Z',
-      position: `${center.x - x2} ${center.y - y2} ${center.z + z2}`
-    });
-
-    renderSVG();
-  });
-</script>
-
-<style>
-
-  model-viewer {
-  background-color: #eee;
-  overflow-x: hidden;
-  margin: auto;
-  width: 65%;
-  height: 60vh;
-  
-}
-
-  #controls {
-    position: absolute;
-    bottom: 16px;
-    left: 16px;
-    max-width: unset;
-    transform: unset;
-    pointer-events: auto;
-    z-index: 100;
-  }
-
-  .dot{
-    display: none;
-  }
-
-  .dim{
-    background: #fff;
-    border-radius: 4px;
-    border: none;
-    box-sizing: border-box;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-    color: rgba(0, 0, 0, 0.8);
-    display: block;
-    font-family: Futura, Helvetica Neue, sans-serif;
-    font-size: 1em;
-    font-weight: 700;
-    max-width: 128px;
-    overflow-wrap: break-word;
-    padding: 0.5em 1em;
-    position: absolute;
-    width: max-content;
-    height: max-content;
-    transform: translate3d(-50%, -50%, 0);
-    pointer-events: none;
-    --min-hotspot-opacity: 0;
-  }
-
-  @media only screen and (max-width: 800px) {
-    .dim{
-      font-size: 3vw;
-    }
-  }
-
-  .dimensionLineContainer{
-    pointer-events: none;
-    display: block;
-  }
-
-  .dimensionLine{
-    stroke: #16a5e6;
-    stroke-width: 2;
-    stroke-dasharray: 2;
-  }
-
-  .hide{
-    display: none;
-  }
-  /* This keeps child nodes hidden while the element loads */
-  :not(:defined) > * {
-    display: none;
-  }
-
-  #ar-button {
-    background-image: url(arlogo.png);
-    background-repeat: no-repeat;
-    background-size: 20px 20px;
-    background-position: 12px 50%;
-    background-color: #fff;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    white-space: nowrap;
-    bottom: 5px;
-    padding: 0px 16px 0px 40px;
-    font-family: Roboto Regular, Helvetica Neue, sans-serif;
-    font-size: 14px;
-    color:#4285f4;
-    height: 36px;
-    line-height: 36px;
-    border-radius: 18px;
-    border: 1px solid #DADCE0;
-  }
-
-  #ar-button:active {
-    background-color: #E8EAED;
-  }
-
-  #ar-button:focus {
-    outline: none;
-  }
-
-  #ar-button:focus-visible {
-    outline: 1px solid #4285f4;
-  }
-
-
-</style>
-
-
-
-
-</div> <!-- end of main div -->
+</div>
 
 <br>
+
+<div style="border: 5px outset blue; padding:20px; margin:5px">
+
+<!--
+ios-src="box.usdz#allowsContentScaling=0&canonicalWebPageURL=https://arod19.github.io"
+interaction-prompt-threshold="1500"
+
+-->
+
+  <center> <u> Option #2: </u></center><br>
+
+  <model-viewer
+  id="selector-demo"
+  src="https://cdn.glitch.me/2d3195c6-7364-49ce-baf3-cb1514312387/box.glb?v=1689964442677"
+  poster="loading.gif" 
+  ar
+  loading="eager"
+  disable-pan
+  auto-rotate
+  camera-controls 
+  camera-orbit="90deg 60deg 4m"
+  touch-action="none" 
+  auto-rotate-delay="1"
+  
+  alt="box">
+    
+    <button slot="ar-button" id="ar-button">
+      View in your space
+    </button>
+
+    
+
+  </model-viewer>
+
+  
+    <center><p id="p1">Organic sweetener with 0 calories.</p></center>
+  <br>
+
+  <div id="control" class="dim">
+    <label for="selector1">Main Dishes:</label>
+    <select id="selector1" onchange="switchSrc(value); clearOthers(this.id); setDesc(value);">
+
+      <option disabled selected value value="clear">-- select an option --</option>
+      <option selected value="box">Stevia Box - $6.99</option>
+      <option value="tums3">Tums - $2.99</option>
+      <option value="cream">Cream - $5.99</option>
+
+    </select><br>
+
+  </div>
+
+  <br>
+
+  <div id="control" class="dim">
+    <label for="selector2">Beverages:</label>
+    <select id="selector2" onchange="switchSrc(value); clearOthers(this.id); setDesc(value);">
+
+      <option disabled selected value value="clear">-- select an option --</option>
+      <option value="monster">Monster Energy - $2.99</option>
+      <option value="coconut">Coconut - $5.99</option>
+
+    </select><br>
+
+  </div>
+
+  <br>
+
+  <div id="control" class="dim">
+    <label for="selector3">Desserts:</label>
+    <select id="selector3" onchange="switchSrc(value); clearOthers(this.id); setDesc(value);">
+
+      <option disabled selected value value="clear">-- select an option --</option>
+      <option value="cake">Chocolate Cake - $9.99</option>
+      <option value="sundae">Sundae - $5.99</option>
+
+    </select><br>
+
+  </div>
+  
+ 
+
+   
+  <script type=module>
+
+  const modelViewer = document.querySelector('#selector-demo');
+
+  window.switchSrc = (i) => {
+    modelViewer.poster = "loading.gif"
+    modelViewer.src = i + ".glb"; 
+    //modelViewer.ios-src= i + ""
+  }
+
+  //ios-src="box.usdz#allowsContentScaling=0&canonicalWebPageURL=https://arod19.github.io"
+
+  </script>
+
+
+
+   <script type="text/javascript">
+
+    function setDesc(value){
+
+      if (value == "box") {
+        document.getElementById("p1").innerHTML = "Organic sweetener with 0 calories."
+      }
+
+      if (value == "tums3") {
+        document.getElementById("p1").innerHTML = "Best remedy for stomachaches."
+      }
+
+      if (value == "monster") {
+        document.getElementById("p1").innerHTML = "Caffeinated energy drink."
+      }
+
+      if (value == "coconut") {
+        document.getElementById("p1").innerHTML = "Refreshing and natural."
+      }
+
+      if (value == "cake") {
+        document.getElementById("p1").innerHTML = "Delicious chocolate cake, topped with cherries."
+      }
+
+      if (value == "sundae") {
+        document.getElementById("p1").innerHTML = "Cup of ice cream with a touch of chocolate."
+      }
+
+      if (value == "cream") {
+        document.getElementById("p1").innerHTML = "Try our newest cream!"
+      }
+
+
+    }
+
+
+    function clearOthers(id){
+      if (id == "selector1") {
+        document.getElementById("selector2").selectedIndex = 0;
+        document.getElementById("selector3").selectedIndex = 0;        
+      }
+
+      if (id == "selector2") {
+        document.getElementById("selector1").selectedIndex = 0;
+        document.getElementById("selector3").selectedIndex = 0;        
+      }
+
+      if (id == "selector3") {
+        document.getElementById("selector1").selectedIndex = 0;
+        document.getElementById("selector2").selectedIndex = 0;        
+      }
+
+    }
+   
+
+
+  </script>
+
+
+
+</div>
+
+
 <br>
 
 <footer>
   <center>
-  <p>&copy; ARL 2023. <br>
+  <p>&copy; ARL 2023 <br>
   <a href="mailto:angelrod1919@gmail.com">angelrod1919@gmail.com
   </a>
   </p>
@@ -344,6 +268,8 @@
   <br>
 </center>
 </footer>
+
+
 
 
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
